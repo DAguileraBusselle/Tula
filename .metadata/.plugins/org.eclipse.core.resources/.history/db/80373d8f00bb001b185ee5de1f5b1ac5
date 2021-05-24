@@ -1,0 +1,26 @@
+package view;
+
+import javax.swing.JFrame;
+import javax.swing.JSpinner;
+import javax.swing.JLabel;
+
+public class VPTula extends JFrame {
+	private JSpinner spinner;
+	public VPTula() {
+		init();
+	}
+
+	private void init() {
+		getContentPane().setLayout(null);
+		
+		spinner = new JSpinner();
+		spinner.setBounds(272, 111, 30, 20);
+		getContentPane().add(spinner);
+		
+		JLabel lblDaniTula = new JLabel("Introduzca longitud de pene dani:");
+		lblDaniTula.setBounds(64, 114, 181, 14);
+		getContentPane().add(lblDaniTula);
+		
+		
+	}
+}

@@ -1,0 +1,56 @@
+package main;
+
+import java.awt.EventQueue;
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+import control.TulaListener;
+import extra.SimpleAudioPlayer;
+import view.V666;
+import view.VAmongus;
+import view.VCagaste;
+import view.VPTula;
+import view.VWeed;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+
+		EventQueue.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						
+						VPTula vpt = new VPTula();
+						VAmongus va = new VAmongus();
+						V666 v6 = new V666();
+						VCagaste vc = new VCagaste();
+						VWeed vw = new VWeed();
+						SimpleAudioPlayer sap;
+						try {
+							sap = new SimpleAudioPlayer();
+						} catch (UnsupportedAudioFileException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (LineUnavailableException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						TulaListener listener = new TulaListener(vpt, va, v6, vc, vw, sap);
+						
+						vpt.setListener(listener);
+						va.setListener(listener);
+						vc.setListener(listener);
+						vw.setListener(listener);
+						
+						vpt.hacerVisible();
+			}
+		});
+	}
+}

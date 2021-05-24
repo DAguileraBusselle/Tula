@@ -1,0 +1,74 @@
+package control;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
+import view.V666;
+import view.VAmongus;
+import view.VPTula;
+
+public class TulaListener implements ActionListener {
+
+
+	private VPTula vpt;
+	private VAmongus va;
+	private V666 v6;
+	
+	public TulaListener(VPTula vpt, VAmongus va, V666 v6) {
+		
+		this.vpt = vpt;
+		this.va = va;
+		this.v6 = v6;
+	}
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent ev) {
+		if (ev.getSource() instanceof JButton) {
+			if (ev.getActionCommand().equals(VPTula.BTN_EVALUAR)) {
+				if (vpt.getLongitud() == 0) {
+					vpt.mostrarMsjInfo("No hay tula");
+				} else if (vpt.getLongitud() == 147) {
+					vpt.mostrarMsjInfo("...");
+					vpt.mostrarMsjInfo("no");
+					System.exit(0);
+				} else if (vpt.getLongitud() == 69) {
+					vpt.dispose();
+					va.hacerVisible();
+				} else if (vpt.getLongitud() == 666) { 
+					int cont = 0;
+					vpt.dispose();
+					while (cont < 200) {
+						v6.dispose();
+						v6.hacerVisible();						
+						cont++;
+					}
+					try
+					{
+					    Thread.sleep(1000);
+					}
+					catch(InterruptedException ex)
+					{
+					    Thread.currentThread().interrupt();
+					}
+					
+					System.exit(0);
+				} else if (vpt.getLongitud() <= 5) {
+					vpt.mostrarMsjInfo("Bueno... hay tula");
+				} else if (vpt.getLongitud() > 5) {
+					vpt.mostrarMsjInfo("Tremenda tula");
+				} if (vpt.getLongitud() == 420) {
+					vpt.mostrarMsjInfo("jaja 420");
+				}
+			} else if (ev.getActionCommand().equals(VAmongus.BTN_WHAT)) {
+				va.dispose();
+				vpt.hacerVisible();
+			}
+		}
+				
+		
+	}
+	
+
+}

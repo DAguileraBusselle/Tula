@@ -1,0 +1,55 @@
+package view;
+
+
+import java.util.Random;
+
+
+import javax.swing.JFrame;
+
+public class VPetaCulos extends JFrame {
+	
+	private static final long serialVersionUID = 1L;
+	static final int ANCHO = 500;
+	static final int ALTO = 300;
+	
+	public VPetaCulos() {
+		init();
+	}
+	private void init() {
+		Random rd = new Random();
+		int x = rd.nextInt(1080 - 200) + 200;
+		int y = rd.nextInt(1080 - 200) + 200;
+		
+		getContentPane().setLayout(null);
+		
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(ANCHO, ALTO);
+		
+		
+		setLocation(x, y);
+	}
+	
+	public int nuevaX() {
+		Random rd = new Random();
+		int x = rd.nextInt(1080 - 200) + 200;
+		return x;
+	}
+	
+	public int nuevaY() {
+		Random rd = new Random();
+		int y = rd.nextInt(1080 - 200) + 200;
+		return y;
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+
+
+}

@@ -1,0 +1,68 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import control.TulaListener;
+
+public class VWeed extends JFrame {
+
+private static final long serialVersionUID = 1L;
+	
+	public static final String BTN_WEED = "...";
+	static final int ANCHO = 500;
+	static final int ALTO = 300;
+	private JButton btnWeed;
+	private JLabel lblWeed;
+
+	public VWeed() {
+		init();
+	}
+	private void init() {
+		getContentPane().setLayout(null);
+				
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(381, 265);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ANCHO, ALTO);
+		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+	
+	public void setListener(TulaListener listener) {
+		btnWeed.addActionListener(listener);
+	}
+	
+	public void grow() {
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ANCHO, ALTO);
+		
+		while (ventana.width < pantalla.width || ventana.height < pantalla.height) {
+			ventana.width++;
+			ventana.height++;
+		}
+	}
+	
+	public void showAfterGrow() {
+		btnWeed = new JButton(BTN_WEED);
+		btnWeed.setBounds(45, 192, 274, 23);
+		getContentPane().add(btnWeed);
+		
+		
+		
+	}
+}

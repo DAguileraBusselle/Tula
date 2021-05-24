@@ -1,0 +1,63 @@
+package view;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import control.TulaListener;
+
+import java.awt.Font;
+import javax.swing.JButton;
+
+public class VCagaste extends JFrame {
+
+
+	private static final long serialVersionUID = 1L;
+	
+	public static final String BTN_CAGASTE = "que cojones me has dicho hijo de la gran puta que sepas que te voy a reventar estoy mamadisimo";
+	static final int ANCHO = 500;
+	static final int ALTO = 300;
+	private JButton btnCagaste;
+
+	public VCagaste() {
+		init();
+	}
+	private void init() {
+		getContentPane().setLayout(null);
+		getContentPane().setBackground(Color.RED);
+		this.setBackground(Color.RED);
+		JLabel lblNewLabel = new JLabel("CAGASTE");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 62));
+		lblNewLabel.setBounds(54, 58, 258, 101);
+		getContentPane().add(lblNewLabel);
+		
+		btnCagaste = new JButton(BTN_CAGASTE);
+		btnCagaste.setBounds(0, 203, 365, 23);
+		btnCagaste.setBackground(Color.red);
+		getContentPane().add(btnCagaste);
+		
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(381, 265);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ANCHO, ALTO);
+		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+	
+	public void setListener(TulaListener listener) {
+		btnCagaste.addActionListener(listener);
+	}
+}

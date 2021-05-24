@@ -1,0 +1,14 @@
+package view;
+
+import javax.swing.JFrame;
+
+public class VPTula extends JFrame {
+	public VPTula() {
+		init();
+	}
+
+	private void init() {
+		getContentPane().setLayout(null);
+	}
+
+}

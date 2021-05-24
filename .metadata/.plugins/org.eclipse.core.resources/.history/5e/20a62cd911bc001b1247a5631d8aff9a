@@ -1,0 +1,44 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class VCagaste extends JFrame {
+
+
+	private static final long serialVersionUID = 1L;
+	static final int ANCHO = 500;
+	static final int ALTO = 300;
+
+	public VCagaste() {
+		init();
+	}
+	private void init() {
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("CAGASTE");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 62));
+		lblNewLabel.setBounds(54, 58, 258, 101);
+		getContentPane().add(lblNewLabel);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(381, 265);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ANCHO, ALTO);
+		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+}

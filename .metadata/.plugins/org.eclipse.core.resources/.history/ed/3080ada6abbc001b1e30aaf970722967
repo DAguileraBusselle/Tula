@@ -1,0 +1,42 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class VPetaCulos extends JFrame {
+	public VPetaCulos() {
+		init();
+	}
+	private void init() {
+		int r
+		
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(V666.class.getResource("/view/666.jpg")));
+		lblNewLabel.setBounds(10, 20, 344, 262);
+		getContentPane().add(lblNewLabel);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(381, 265);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ancho, alto);
+		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+
+
+}

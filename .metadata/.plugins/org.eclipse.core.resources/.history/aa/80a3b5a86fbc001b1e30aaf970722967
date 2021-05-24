@@ -1,0 +1,38 @@
+package main;
+
+import java.awt.EventQueue;
+
+import control.TulaListener;
+import view.V666;
+import view.VAmongus;
+import view.VCagaste;
+import view.VPTula;
+import view.VWeed;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+
+		EventQueue.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						
+						VPTula vpt = new VPTula();
+						VAmongus va = new VAmongus();
+						V666 v6 = new V666();
+						VCagaste vc = new VCagaste();
+						VWeed vw = new VWeed();
+						
+						TulaListener listener = new TulaListener(vpt, va, v6, vc, vw);
+						
+						vpt.setListener(listener);
+						va.setListener(listener);
+						vc.setListener(listener);
+						vw.setListener(listener);
+						
+						vpt.hacerVisible();
+			}
+		});
+	}
+}

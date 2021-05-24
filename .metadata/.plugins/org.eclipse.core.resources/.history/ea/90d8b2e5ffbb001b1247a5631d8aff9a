@@ -1,0 +1,47 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+public class V666 extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	static final int ANCHO = 500;
+	static final int ALTO = 300;
+	
+	public static final String BTN_EVALUAR = "EVALUAR";
+	public static final String BTN_WHAT = ".... que?";
+	public V666() {
+		init();
+	}
+	private void init() {
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(V666.class.getResource("/view/Webp.net-resizeimage (1).jpg")));
+		lblNewLabel.setBounds(10, -20, 344, 262);
+		getContentPane().add(lblNewLabel);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(381, 265);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ANCHO, ALTO);
+		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+
+}
