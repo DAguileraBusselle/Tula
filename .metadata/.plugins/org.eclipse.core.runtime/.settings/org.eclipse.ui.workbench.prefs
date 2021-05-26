@@ -1,4 +1,5 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+ENABLED_DECORATORS=org.eclipse.m2e.core.mavenVersionDecorator\:false,org.eclipse.ui.LinkedResourceDecorator\:false,org.eclipse.ui.SymlinkDecorator\:false,org.eclipse.ui.VirtualResourceDecorator\:false,org.eclipse.ui.ContentTypeDecorator\:false,org.eclipse.ui.ResourceFilterDecorator\:false,org.eclipse.debug.ui.prototype.decorator\:false,org.eclipse.m2e.core.maven2decorator\:false,org.eclipse.jdt.ui.override.decorator\:false,org.eclipse.jdt.ui.interface.decorator\:false,org.eclipse.jdt.ui.buildpath.decorator\:false,org.eclipse.jdt.internal.ui.without.test.code.decorator\:false,org.eclipse.buildship.ui.gradledecorator\:false,org.eclipse.eclemma.ui.coverageDecorator\:false,org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator\:false,org.eclipse.egit.ui.internal.repository.RepositoryTreeNodeDecorator\:false,org.eclipse.pde.ui.binaryProjectDecorator\:false,
 PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
 eclipse.preferences.version=1
 org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_END=41,41,41

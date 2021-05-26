@@ -1,0 +1,40 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class VCirculo extends JFrame {
+
+	
+	private static final long serialVersionUID = 1L;
+	static final int ANCHO = 200;
+	static final int ALTO = 150;
+
+	public void init(int x, int y) {
+		getContentPane().setLayout(null);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(ANCHO, ALTO);
+		
+		
+		setLocation(x, y);
+		
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+}
+//else if (cont ==) {
+	//setLocation(,);
+//}

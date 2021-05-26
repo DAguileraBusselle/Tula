@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.net.URL;
 
-import javax.sound.sampled.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,13 +13,13 @@ import control.TulaListener;
 public class VWeed extends JFrame {
 
 private static final long serialVersionUID = 1L;
-
-	public static final String SPEAR = "SpearOfJustice.wav";
+	
+	public URL battleURL = getClass().getResource("Battle.wav");
+	public URL spearURL = getClass().getResource("SpearofJustice.wav");
 	public static final String BTN_WEED = "...no?";
 	static final int ANCHO = 500;
 	static final int ALTO = 300;
 
-	private Clip clip;
 	private JButton btnWeed;
 	private JLabel lblWeed;
 	
@@ -77,25 +76,7 @@ private static final long serialVersionUID = 1L;
 
 	}
 	
-	URL spearURL = getClass().getResource("SpearofJustice.wav");
 	
-	public void playSound() {
-		try {
-		AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(spearURL);
-		clip = AudioSystem.getClip();
-		clip.open(audioInputStream);
-		clip.start();
-		
-		} catch(Exception ex) {
-		System.out.println("Error with playing sound.");
-		ex.printStackTrace();
-		}
-		
-		
-	}
 	
-	public void endSound() {
-		clip.stop();
-		clip.flush();
-	}
+	
 }

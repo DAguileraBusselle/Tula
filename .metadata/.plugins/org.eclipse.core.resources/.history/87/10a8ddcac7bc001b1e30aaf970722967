@@ -1,0 +1,56 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import control.TulaListener;
+
+public class VSexo extends JFrame {
+	private static final long serialVersionUID = 1L;
+	static final int ANCHO = 500;
+	static final int ALTO = 300;
+	
+	public static final String BTN_SEXO = "....";
+	private JButton btnSexo;
+	public VSexo() {
+		init();
+	}
+	private void init() {
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(VAmongus.class.getResource("/view/sexo.gif")));
+		lblNewLabel.setBounds(81, 0, 308, 294);
+		getContentPane().add(lblNewLabel);
+		
+		btnSexo = new JButton(BTN_SEXO);
+		btnSexo.setBounds(191, 318, 89, 23);
+		getContentPane().add(btnSexo);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(500, 404);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ANCHO, ALTO);
+		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+	
+	public void setListener(TulaListener listener) {
+		btnSexo.addActionListener(listener);
+	}
+}
+

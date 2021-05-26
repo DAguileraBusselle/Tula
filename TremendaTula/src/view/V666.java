@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -9,6 +10,8 @@ import javax.swing.JLabel;
 
 public class V666 extends JFrame {
 
+	public URL cagasteURL = getClass().getResource("Cagaste.wav");
+	public URL six66URL = getClass().getResource("666.wav");
 	private static final long serialVersionUID = 1L;
 	static final int ANCHO = 1835;
 	static final int ALTO = 1080;

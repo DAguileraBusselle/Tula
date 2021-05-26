@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,7 +14,7 @@ import control.TulaListener;
 public class VWeedChill extends JFrame {
 private static final long serialVersionUID = 1L;
 	
-	public static final String SOUND = "SpearOfJustice.wav";
+	public URL chillURL = getClass().getResource("Chill.wav");
 	public static final String BTN_WCHILL = "OK bye :)";
 	static final int ANCHO = 500;
 	static final int ALTO = 300;

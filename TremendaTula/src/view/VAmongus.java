@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,11 +13,11 @@ import control.TulaListener;
 
 public class VAmongus extends JFrame {
 
+	public URL amongassURL = getClass().getResource("Amongass.wav");
 	private static final long serialVersionUID = 1L;
 	static final int ANCHO = 500;
 	static final int ALTO = 300;
 	
-	public static final String BTN_EVALUAR = "EVALUAR";
 	public static final String BTN_WHAT = ".... que?";
 	private JButton btnWhat;
 	public VAmongus() {
