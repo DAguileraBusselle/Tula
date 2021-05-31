@@ -100,7 +100,11 @@
 		<item key="JarManifestWizardPage.SEAL_JAR" value="false"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
 			<item value="C:\Users\Usuario\Desktop\Tula(0.1.4.5).jar"/>
+			<item value="C:\Users\david\OneDrive\Desktop\Tula(0.1.4.5).jar"/>
 			<item value="C:\Users\Usuario\Desktop\Tula.jar"/>
 		</list>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item key="pageIndex" value="2"/>
 	</section>
 </section>

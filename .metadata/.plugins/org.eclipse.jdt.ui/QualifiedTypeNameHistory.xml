@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.awt.EventQueue"/>
     <fullyQualifiedTypeName name="view.VPTula"/>
-    <fullyQualifiedTypeName name="control.TulaListener"/>
     <fullyQualifiedTypeName name="java.awt.Dimension"/>
     <fullyQualifiedTypeName name="java.awt.Toolkit"/>
     <fullyQualifiedTypeName name="java.awt.Frame"/>
@@ -19,5 +18,9 @@
     <fullyQualifiedTypeName name="view.VWeedDie"/>
     <fullyQualifiedTypeName name="view.VWeedYeah"/>
     <fullyQualifiedTypeName name="view.VWeedChoose"/>
+    <fullyQualifiedTypeName name="control.TulaListener"/>
+    <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
+    <fullyQualifiedTypeName name="control.KeyListener"/>
+    <fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
     <fullyQualifiedTypeName name="java.awt.Color"/>
 </qualifiedTypeNameHistroy>

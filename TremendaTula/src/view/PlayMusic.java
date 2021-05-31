@@ -16,7 +16,7 @@ public class PlayMusic {
 		clip = AudioSystem.getClip();
 		clip.open(audioInputStream);
 		clip.start();
-		
+		System.out.println("PLAYING MUSIC");
 		} catch(Exception ex) {
 		System.out.println("Error with playing sound.");
 		ex.printStackTrace();
@@ -28,5 +28,6 @@ public class PlayMusic {
 	public void endSound() {
 		clip.stop();
 		clip.flush();
+		System.out.println("STOPPING MUSIC");
 	}
 }

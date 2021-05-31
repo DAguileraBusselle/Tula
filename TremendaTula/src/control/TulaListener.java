@@ -39,6 +39,7 @@ public class TulaListener implements ActionListener {
 	
 	private static int contSexo = 0;
 	private static int contWeed = 3;
+	private static int cont147 = 0;
 	
 	public TulaListener(VPTula vpt, VAmongus va, V666 v6, VCagaste vc, VWeed vw, VWeedChill vwc,
 			VPetaCulos vpc, PlayMusic pm, VSexo vs, VWeedFriend vwf, VWeedSad vws, VWeedYeah vwy, 
@@ -58,6 +59,16 @@ public class TulaListener implements ActionListener {
 		System.setProperty("java.awt.headless", "true");
 		if (ev.getSource() instanceof JButton) {
 			if (ev.getActionCommand().equals(VPTula.BTN_EVALUAR)) {
+//CODIGO SECRETO (147)				
+				if (vpt.getLongitud()== 1) {
+					cont147 = 1;
+				} else if (vpt.getLongitud() == 4 && cont147 == 1) {
+					cont147 ++;
+				} else if (vpt.getLongitud() == 7 && cont147 == 2) {
+					vpt.mostrarMsj("hola buenas");
+				} else {
+					cont147 = 0;
+				}
 // NO HAY TULA				
 				if (vpt.getLongitud() == 0) {
 					vpt.mostrarMsjInfo("No hay tula");					
@@ -148,7 +159,7 @@ public class TulaListener implements ActionListener {
 				vpt.hacerVisible();
 			} else if (ev.getActionCommand().equals(VCagaste.BTN_CAGASTE)) {
 				vc.dispose();
-				v6.hacerVisible();
+				
 				pm.playSound(v6.cagasteURL);
 				int contCagaste = 0;
 				while (contCagaste < 666) {
@@ -157,6 +168,7 @@ public class TulaListener implements ActionListener {
 					vpc.dispose();
 					contCagaste++;
 				}
+				v6.hacerVisible();
 				pm.endSound();
 				pm.playSound(v6.six66URL);
 			} else if (ev.getActionCommand().equals(VWeed.BTN_WEED)) {

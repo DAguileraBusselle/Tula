@@ -13,6 +13,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.SpinnerNumberModel;
+import java.awt.event.KeyListener;
 
 public class VPTula extends JFrame {
 	
@@ -23,6 +24,7 @@ public class VPTula extends JFrame {
 	public static final String BTN_EVALUAR = "EVALUAR";
 	private JSpinner spinner;
 	private JButton btnEvaluar;
+	
 	public VPTula() {
 		init();
 	}
@@ -63,6 +65,10 @@ public class VPTula extends JFrame {
 	
 	public void setListener(TulaListener listener) {
 		btnEvaluar.addActionListener(listener);
+	}
+	
+	public void setKeyListener(KeyListener key) {
+		spinner.addKeyListener(key);
 	}
 	
 	public int getLongitud() {

@@ -1,0 +1,180 @@
+package view;
+
+import javax.swing.JFrame;
+import javax.swing.JSpinner;
+
+import control.TulaListener;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.JButton;
+import javax.swing.SpinnerNumberModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class VPTula extends JFrame {
+	
+	private static final long serialVersionUID = 1L;
+	static final int ANCHO = 500;
+	static final int ALTO = 300;
+	
+	public static final String BTN_EVALUAR = "EVALUAR";
+	private JSpinner spinner;
+	private JButton btnEvaluar;
+	
+
+	private VPTula vpt;
+	private VAmongus va;
+	private VCagaste vc;
+	private VWeed vw;
+	private PlayMusic pm;
+	private VSexo vs;
+	private VWeedFriend vwf;
+	private VWeedChoose vww;
+	
+	private static int contSexo = 0;
+	private static int contWeed = 3;
+	
+	public VPTula() {
+		init();
+	}
+
+	@SuppressWarnings("deprecation")
+	private void init() {
+		getContentPane().setLayout(null);
+		
+		spinner = new JSpinner();
+		spinner.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode()==KeyEvent.VK_ENTER) {
+					// NO HAY TULA				
+					if (vpt.getLongitud() == 0) {
+						vpt.mostrarMsjInfo("No hay tula");					
+	//   147				
+					} else if (vpt.getLongitud() == 147) {
+						vpt.mostrarMsjInfo("...");
+						vpt.mostrarMsjInfo("no");
+						System.exit(0);
+//	    69					
+					} else if (vpt.getLongitud() == 69) {
+						if (contSexo == 1) {
+							System.out.println("im in");
+							vpt.dispose();
+							vs.hacerVisible();
+							pm.playSound(vs.sexoURL);
+						} else {
+							System.out.println("not in");
+							vpt.dispose();
+							va.hacerVisible();
+							pm.playSound(va.amongassURL);
+							contSexo++;
+						}
+	//   666					
+					} else if (vpt.getLongitud() == 666) { 
+						vpt.dispose();
+						vc.hacerVisible();	
+	//   420					
+					} else if (vpt.getLongitud() == 420) {					
+						if (contWeed == 3) {
+							vpt.mostrarMsj("Este es un camino peligroso, date la vuelta ahora mismo");
+							contWeed--;
+						} else if (contWeed == 2) {
+							vpt.mostrarMsj("No te pienso volver a avisar");
+							contWeed--;
+						} else if (contWeed == 1) {
+							vpt.mostrarMsj("...");
+							contWeed--;
+						}
+						else if (contWeed == 0) {
+							vpt.mostrarMsj("Tú te lo has buscado");
+							vpt.mostrarMsj("Ahora tu destino esta sellado");
+							vpt.mostrarMsj("Preparate...");
+							pm.playSound(vw.battleURL);
+							vpt.mostrarMsj("...");
+							vpt.dispose();					
+							vw.hacerVisible();
+							pm.playSound(vw.spearURL);
+						} else if (contWeed == -2) {
+							vpt.mostrarMsj("...");
+							pm.playSound(vwf.frendURL);
+							vpt.mostrarMsj("Despues de todo lo que ha hecho...");
+							vpt.mostrarMsj("Sigues queriendo verle...");
+							vpt.mostrarMsj("Muy bien");
+							vpt.dispose();
+							vwf.hacerVisible();
+						} else if (contWeed ==-3) {
+							pm.playSound(vww.chooseURL);
+							vpt.dispose();
+							vww.hacerVisible();
+						} else if (contWeed == -1) {
+							vpt.mostrarMsj("...");
+						}				 
+	// CHIKITA TULA				
+					} else if (vpt.getLongitud() <= 5) {
+						vpt.mostrarMsjInfo("Bueno... hay tula");
+	// TREMENDA TULA				
+					} else if (vpt.getLongitud() > 5) {
+						vpt.mostrarMsjInfo("Tremenda tula");
+					} 
+					vpt.limpiarComponentes();
+				}
+
+			}
+		});
+		spinner.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
+		spinner.setBounds(288, 89, 51, 20);
+		getContentPane().add(spinner);
+		
+		JLabel lblDaniTula = new JLabel("Introduzca longitud de pene (cm):");
+		lblDaniTula.setBounds(24, 92, 254, 14);
+		getContentPane().add(lblDaniTula);
+		
+		btnEvaluar = new JButton(BTN_EVALUAR);
+		btnEvaluar.setBounds(164, 162, 89, 23);
+		getContentPane().add(btnEvaluar);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(ANCHO, ALTO);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension ventana = new Dimension(ANCHO, ALTO);
+		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void hacerInvisible() {
+		setVisible(false);
+	}
+	
+	public void setListener(TulaListener listener) {
+		btnEvaluar.addActionListener(listener);
+		spinner.addKeyListener();
+	}
+	
+	public int getLongitud() {
+		return (int) spinner.getValue();
+	}
+
+	public void mostrarMsjInfo(String msj) {
+		JOptionPane.showMessageDialog(this, msj, "Informacion de tula", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	public void mostrarMsj(String msj) {
+		JOptionPane.showMessageDialog(this, msj, "", JOptionPane.WARNING_MESSAGE);
+	}
+	
+	public void limpiarComponentes() {
+		spinner.setValue(0);
+	}
+
+	
+}

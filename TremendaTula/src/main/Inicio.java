@@ -3,6 +3,7 @@ package main;
 import java.awt.EventQueue;
 
 import control.TulaListener;
+
 import view.VWeedChill;
 import view.VWeedChoose;
 import view.VWeedSad;
@@ -53,6 +54,8 @@ public class Inicio {
 						vws.setListener(listener);
 						vwy.setListener(listener);
 						vww.setListener(listener);
+						
+						
 						
 						vpt.hacerVisible();
 			}

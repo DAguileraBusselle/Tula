@@ -1,0 +1,125 @@
+package control;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import view.PlayMusic;
+import view.VAmongus;
+import view.VCagaste;
+import view.VPTula;
+import view.VSexo;
+import view.VWeed;
+import view.VWeedChoose;
+import view.VWeedFriend;
+
+public class ListenKey implements KeyListener {
+
+
+	private VPTula vpt;
+	private VAmongus va;
+	private VCagaste vc;
+	private VWeed vw;
+	private PlayMusic pm;
+	private VSexo vs;
+	private VWeedFriend vwf;
+	private VWeedChoose vww;
+	
+	private static int contSexo = 0;
+	private static int contWeed = 3;
+	
+	public ListenKey(VPTula vpt) {
+		
+		this.vpt = vpt;
+	}
+	
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode()==KeyEvent.VK_ENTER) {
+			// NO HAY TULA				
+			if (vpt.getLongitud() == 0) {
+				vpt.mostrarMsjInfo("No hay tula");					
+//   147				
+			} else if (vpt.getLongitud() == 147) {
+				vpt.mostrarMsjInfo("...");
+				vpt.mostrarMsjInfo("no");
+				System.exit(0);
+//69					
+			} else if (vpt.getLongitud() == 69) {
+				if (contSexo == 1) {
+					System.out.println("im in");
+					vpt.dispose();
+					vs.hacerVisible();
+					pm.playSound(vs.sexoURL);
+				} else {
+					System.out.println("not in");
+					vpt.dispose();
+					va.hacerVisible();
+					pm.playSound(va.amongassURL);
+					contSexo++;
+				}
+//   666					
+			} else if (vpt.getLongitud() == 666) { 
+				vpt.dispose();
+				vc.hacerVisible();	
+//   420					
+			} else if (vpt.getLongitud() == 420) {					
+				if (contWeed == 3) {
+					vpt.mostrarMsj("Este es un camino peligroso, date la vuelta ahora mismo");
+					contWeed--;
+				} else if (contWeed == 2) {
+					vpt.mostrarMsj("No te pienso volver a avisar");
+					contWeed--;
+				} else if (contWeed == 1) {
+					vpt.mostrarMsj("...");
+					contWeed--;
+				}
+				else if (contWeed == 0) {
+					vpt.mostrarMsj("Tú te lo has buscado");
+					vpt.mostrarMsj("Ahora tu destino esta sellado");
+					vpt.mostrarMsj("Preparate...");
+					pm.playSound(vw.battleURL);
+					vpt.mostrarMsj("...");
+					vpt.dispose();					
+					vw.hacerVisible();
+					pm.playSound(vw.spearURL);
+				} else if (contWeed == -2) {
+					vpt.mostrarMsj("...");
+					pm.playSound(vwf.frendURL);
+					vpt.mostrarMsj("Despues de todo lo que ha hecho...");
+					vpt.mostrarMsj("Sigues queriendo verle...");
+					vpt.mostrarMsj("Muy bien");
+					vpt.dispose();
+					vwf.hacerVisible();
+				} else if (contWeed ==-3) {
+					pm.playSound(vww.chooseURL);
+					vpt.dispose();
+					vww.hacerVisible();
+				} else if (contWeed == -1) {
+					vpt.mostrarMsj("...");
+				}				 
+// CHIKITA TULA				
+			} else if (vpt.getLongitud() <= 5) {
+				vpt.mostrarMsjInfo("Bueno... hay tula");
+// TREMENDA TULA				
+			} else if (vpt.getLongitud() > 5) {
+				vpt.mostrarMsjInfo("Tremenda tula");
+			} 
+			vpt.limpiarComponentes();
+		}
+
+	}
+
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
